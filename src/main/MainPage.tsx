@@ -7,7 +7,6 @@ export const MainPage = () => {
     <Container>
       <TodoSummary />
       <Divider />
-
       <TodoList />
     </Container>
   );

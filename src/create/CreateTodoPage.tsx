@@ -7,7 +7,7 @@ export const CreateTodoPage = () => {
         <Form.Field
           id="form-input-control-first-name"
           control={Input}
-          label="First name"
+          label="Todo"
           placeholder="What is your todo"
         />
         <Form.Field

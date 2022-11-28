@@ -61,6 +61,10 @@ const DesktopContainer = ({ children }: DesktopContainerProps) => {
     navigate("/register");
   };
 
+  const onClickBack = () => {
+    navigate(-1);
+  };
+
   const isMainPage = () =>
     useMemo(() => {
       console.log(location);
@@ -75,7 +79,7 @@ const DesktopContainer = ({ children }: DesktopContainerProps) => {
       >
         <Menu secondary>
           <Menu.Item name="home">
-            <Button circular inverted icon="angle left" />
+            <Button circular inverted icon="angle left" onClick={onClickBack} />
           </Menu.Item>
 
           <Menu.Menu position="right">
