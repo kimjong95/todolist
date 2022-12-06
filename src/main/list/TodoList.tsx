@@ -19,7 +19,7 @@ export const TodoList = () => {
     <List celled selection divided relaxed inverted>
       {todoList.map((todo) => {
         return (
-          <List.Item onClick={() => onClickDetail(todo.id)}>
+          <List.Item key={todo.id} onClick={() => onClickDetail(todo.id)}>
             <List.Content floated="left">
               <p>{todo.title}</p>
             </List.Content>
