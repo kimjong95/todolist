@@ -16,7 +16,7 @@ export const TodoSummary = () => {
             <Card.Content>
               <Card.Header>Total Todos</Card.Header>
               <Card.Description>
-                <strong>15</strong>
+                <strong>{todoList.length}</strong>
               </Card.Description>
             </Card.Content>
           </Card>
