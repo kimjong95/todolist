@@ -15,6 +15,10 @@ export const TodoList = () => {
 
   console.log("###TodoList", todoList);
 
+  const onClickComplete = () => {
+    console.log("###OnClick");
+  };
+
   return (
     <List celled selection divided relaxed inverted>
       {todoList.map((todo) => {
@@ -24,7 +28,9 @@ export const TodoList = () => {
               <p>{todo.title}</p>
             </List.Content>
             <List.Content floated="right">
-              <Button primary>Complete</Button>
+              <Button primary onClick={() => onClickComplete()}>
+                Complete
+              </Button>
             </List.Content>
           </List.Item>
         );
