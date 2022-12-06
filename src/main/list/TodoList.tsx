@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, List } from "semantic-ui-react";
+import TodoListContext from "../MainPage.context";
 
 export const TodoList = () => {
   //
@@ -8,32 +10,25 @@ export const TodoList = () => {
   const onClickDetail = (todoId: string) => {
     navigate(`/detail/${todoId}`);
   };
+
+  const todoList = useContext(TodoListContext);
+
+  console.log("###TodoList", todoList);
+
   return (
     <List celled selection divided relaxed inverted>
-      <List.Item onClick={() => onClickDetail("1")}>
-        <List.Content floated="left">
-          <p>yesterday todo</p>
-        </List.Content>
-        <List.Content floated="right">
-          <Button primary>Complete</Button>
-        </List.Content>
-      </List.Item>
-      <List.Item onClick={() => onClickDetail("2")}>
-        <List.Content floated="left">
-          <p>today todo</p>
-        </List.Content>
-        <List.Content floated="right">
-          <Button primary>Complete</Button>
-        </List.Content>
-      </List.Item>
-      <List.Item onClick={() => onClickDetail("3")}>
-        <List.Content floated="left">
-          <p>tomorrow todo</p>
-        </List.Content>
-        <List.Content floated="right">
-          <Button primary>Complete</Button>
-        </List.Content>
-      </List.Item>
+      {todoList.map((todo) => {
+        return (
+          <List.Item onClick={() => onClickDetail(todo.id)}>
+            <List.Content floated="left">
+              <p>{todo.title}</p>
+            </List.Content>
+            <List.Content floated="right">
+              <Button primary>Complete</Button>
+            </List.Content>
+          </List.Item>
+        );
+      })}
     </List>
   );
 };

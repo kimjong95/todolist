@@ -6,7 +6,7 @@ export const TodoSummary = () => {
   //
   const todoList = useContext(TodoListContext);
 
-  console.log("##", todoList);
+  console.log("##TodoSummary", todoList);
 
   return (
     <Grid columns={2} divided centered>
