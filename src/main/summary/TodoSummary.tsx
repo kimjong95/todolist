@@ -1,6 +1,13 @@
+import { useContext } from "react";
 import { Card, Grid } from "semantic-ui-react";
+import TodoListContext from "../MainPage.context";
 
 export const TodoSummary = () => {
+  //
+  const todoList = useContext(TodoListContext);
+
+  console.log("##", todoList);
+
   return (
     <Grid columns={2} divided centered>
       <Grid.Row>

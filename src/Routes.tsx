@@ -9,22 +9,6 @@ import { MainPage } from "./main/MainPage";
 
 export const MainRoutes = () => {
   //
-  const usersCollectionRef = collection(database, "todo");
-
-  useEffect(() => {
-    // 비동기로 데이터 받을준비
-    const getUsers = async () => {
-      // getDocs로 컬렉션안에 데이터 가져오기
-      const data = await getDocs(usersCollectionRef);
-      const listArr = data.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      console.log(listArr);
-    };
-
-    getUsers();
-  }, []);
 
   return (
     <BrowserRouter>
