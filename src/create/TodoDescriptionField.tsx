@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Form } from "semantic-ui-react";
+import { CreateTodoContext } from "./CreateTodo.context";
 
 export const TodoDescriptionField = () => {
   //
-  const [description, setDescription] = useState("");
+  const { description, setDescription } = useContext(CreateTodoContext);
 
   return (
     <>
